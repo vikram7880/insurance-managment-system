@@ -1,5 +1,7 @@
+'use client';
 import { useFormik } from 'formik'
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const AddPolicy = () => {
 
@@ -14,7 +16,24 @@ const AddPolicy = () => {
             period: ''
         },
          onSubmit: (values) => {
-            fetch
+            fetch("http://localhost:5000/insurance/add",{
+                method: "POST",
+                body: JSON.stringify(values),
+                headers:{
+                    "Content-Type" : "application/json"
+                }
+            })
+            .then((response) => {
+                console.log(response.status);
+                if(response.status === 200) {
+                    toast.success("Policies added successfully")
+                }else{
+                    toast.success("Error")
+                }
+            }).catch((err) => {
+                console.log(err);
+                toast.success("Errors ")
+            });
          }
     })
 
@@ -283,7 +302,7 @@ const AddPolicy = () => {
                             <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
                                 Add Insurance Policy Data
                             </h2>
-                            <form>
+                            <form onSubmit={policyForm.handleSubmit}>
                                 <div className="mt-6 grid gap-4 lg:gap-6">
                                     {/* Grid */}
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
@@ -292,12 +311,15 @@ const AddPolicy = () => {
                                                 htmlFor="hs-firstname-hire-us-1"
                                                 className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                             >
-                                                First Name
+                                               Title
                                             </label>
                                             <input
                                                 type="text"
-                                                name="hs-firstname-hire-us-1"
-                                                id="hs-firstname-hire-us-1"
+                                                id='title'
+                                                value={policyForm.values.title}
+                                                onChange={policyForm.handleChange}
+                                                
+                                                
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -306,12 +328,14 @@ const AddPolicy = () => {
                                                 htmlFor="hs-lastname-hire-us-1"
                                                 className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                             >
-                                                Last Name
+                                                Provider
                                             </label>
                                             <input
                                                 type="text"
-                                                name="hs-lastname-hire-us-1"
-                                                id="hs-lastname-hire-us-1"
+                                                id='provider'
+                                                value={policyForm.values.provider}
+                                                onChange={policyForm.handleChange}
+                                                
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -322,13 +346,14 @@ const AddPolicy = () => {
                                             htmlFor="hs-work-email-hire-us-1"
                                             className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                         >
-                                            Work Email
+                                           category
                                         </label>
                                         <input
                                             type="email"
-                                            name="hs-work-email-hire-us-1"
-                                            id="hs-work-email-hire-us-1"
-                                            autoComplete="email"
+                                            id="title"
+                                            value={policyForm.values.title}
+                                           onChange={policyForm.handleChange}
+
                                             className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                         />
                                     </div>
@@ -339,12 +364,14 @@ const AddPolicy = () => {
                                                 htmlFor="hs-company-hire-us-1"
                                                 className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                             >
-                                                Company
+                                                cover
                                             </label>
                                             <input
                                                 type="text"
-                                                name="hs-company-hire-us-1"
-                                                id="hs-company-hire-us-1"
+                                                id="title"
+                                                value={policyForm.values.title}
+                                                onChange={policyForm.handleChange}
+
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -353,12 +380,14 @@ const AddPolicy = () => {
                                                 htmlFor="hs-company-website-hire-us-1"
                                                 className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                             >
-                                                Company Website
+                                                image
                                             </label>
                                             <input
                                                 type="text"
-                                                name="hs-company-website-hire-us-1"
-                                                id="hs-company-website-hire-us-1"
+                                                id="title"
+                                                value={policyForm.values.title}
+                                                onChange={policyForm.handleChange}
+
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -369,7 +398,22 @@ const AddPolicy = () => {
                                             htmlFor="hs-about-hire-us-1"
                                             className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                         >
-                                            Details
+                                            premium
+                                        </label>
+                                        <textarea
+                                            id="hs-about-hire-us-1"
+                                            name="hs-about-hire-us-1"
+                                            rows={4}
+                                            className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                                            defaultValue={""}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            htmlFor="hs-about-hire-us-1"
+                                            className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
+                                        >
+                                            period
                                         </label>
                                         <textarea
                                             id="hs-about-hire-us-1"
