@@ -8,6 +8,7 @@ const port = 5000;
 
 const postRouter = require('./routers/userRouter');
 const insuranceRouter = require('./routers/insuranceRouter');
+const contactRouter = require('./routers/contactRouter');
 
 // middleware
 app.use(cors({
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.use('/user', postRouter);
 app.use('/insurance', insuranceRouter);
+app.use('/contact', contactRouter);
 
 
 // start express server
