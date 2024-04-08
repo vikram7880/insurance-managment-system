@@ -64,19 +64,31 @@ router.put('/update/:id', (req, res) => {
         });
 })
 
-router.post("/authenticate",(req,res) => {
-    console.log(req.status);
-    Model.findOne(req.status)
+router.post('/authenticate',(req,res) =>{
+    Model.findOne(req.body)
     .then((result) => {
         if(result){
-            const payload ={_id:result.id, email:result.email,role:result.role};
-            //create njwt to
-            j
+            const payload ={_id:result.id, email:result.email, role:result.role};
+            //create njwt to 
+            jwt.sign (
+                payload,
+                process.env.JWT_SECRET,
+                { expiresIn:'3 days'},
+                (err,token)=> {
+                    if(err){
+                        console.log(err);
+                        res.status(500).json(err);
+                    } else{
+                        res.status(200).json({token:token, avtar:result.avatar});
+                    }
+                }
+            )
+        }else{
+            res.status(401).json({message:'invaild credentials'});
         }
-
     }).catch((err) => {
+        console.log(err);
 
-    })
+    });
 })
-
 module.exports = router;
