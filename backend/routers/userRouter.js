@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../models/userModel');
+require('dotenv').config();
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -61,6 +62,21 @@ router.put('/update/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+})
+
+router.post("/authenticate",(req,res) => {
+    console.log(req.status);
+    Model.findOne(req.status)
+    .then((result) => {
+        if(result){
+            const payload ={_id:result.id, email:result.email,role:result.role};
+            //create njwt to
+            j
+        }
+
+    }).catch((err) => {
+
+    })
 })
 
 module.exports = router;
