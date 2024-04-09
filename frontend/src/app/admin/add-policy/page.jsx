@@ -15,27 +15,27 @@ const AddPolicy = () => {
             premium: '',
             period: ''
         },
-         onSubmit: (values) => {
+        onSubmit: (values) => {
             console.log(values);
-            fetch("http://localhost:5000/insurance/add",{
+            fetch("http://localhost:5000/insurance/add", {
                 method: "POST",
                 body: JSON.stringify(values),
-                headers:{
-                    "Content-Type" : "application/json"
+                headers: {
+                    "Content-Type": "application/json"
                 }
             })
-            .then((response) => {
-                console.log(response.status);
-                if(response.status === 200) {
-                    toast.success("Policies added successfully")
-                }else{
-                    toast.success("Error")
-                }
-            }).catch((err) => {
-                console.log(err);
-                toast.success("Errors ")
-            });
-         }
+                .then((response) => {
+                    console.log(response.status);
+                    if (response.status === 200) {
+                        toast.success("Policies added successfully")
+                    } else {
+                        toast.success("Error")
+                    }
+                }).catch((err) => {
+                    console.log(err);
+                    toast.success("Errors ")
+                });
+        }
     })
 
     return (
@@ -312,15 +312,15 @@ const AddPolicy = () => {
                                                 htmlFor="hs-firstname-hire-us-1"
                                                 className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                             >
-                                               Title
+                                                Title
                                             </label>
                                             <input
                                                 type="text"
                                                 id='title'
                                                 value={policyForm.values.title}
                                                 onChange={policyForm.handleChange}
-                                                
-                                                
+
+
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -336,7 +336,7 @@ const AddPolicy = () => {
                                                 id='provider'
                                                 value={policyForm.values.provider}
                                                 onChange={policyForm.handleChange}
-                                                
+
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -347,13 +347,13 @@ const AddPolicy = () => {
                                             htmlFor="hs-work-email-hire-us-1"
                                             className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                         >
-                                           category
+                                            Category
                                         </label>
                                         <input
                                             type="text"
                                             id="category"
                                             value={policyForm.values.category}
-                                           onChange={policyForm.handleChange}
+                                            onChange={policyForm.handleChange}
 
                                             className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                         />
@@ -368,10 +368,7 @@ const AddPolicy = () => {
                                                 cover
                                             </label>
                                             <input
-                                                type="text"
-                                                id="cover"
-                                                value={policyForm.values.cover}
-                                                onChange={policyForm.handleChange}
+                                                type="file"
 
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
@@ -385,9 +382,7 @@ const AddPolicy = () => {
                                             </label>
                                             <input
                                                 type="file"
-                                              
-
-                                                // className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                                            className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
                                     </div>
@@ -397,13 +392,13 @@ const AddPolicy = () => {
                                             htmlFor="hs-work-email-hire-us-1"
                                             className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                         >
-                                          Premium
+                                            Premium
                                         </label>
                                         <input
                                             type="number"
                                             id="premium"
                                             value={policyForm.values.premium}
-                                           onChange={policyForm.handleChange}
+                                            onChange={policyForm.handleChange}
 
                                             className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                         />
@@ -413,26 +408,26 @@ const AddPolicy = () => {
                                             htmlFor="hs-work-email-hire-us-1"
                                             className="block mb-2 text-sm text-gray-700 font-medium dark:text-white"
                                         >
-                                           Period
+                                            Period
                                         </label>
                                         <input
                                             type="number"
                                             id="period"
                                             value={policyForm.values.period}
-                                           onChange={policyForm.handleChange}
+                                            onChange={policyForm.handleChange}
 
                                             className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                         />
                                     </div>
                                 </div>
                                 <div className="mt-6 grid">
-                                <button
-                                    type="submit"
-                                    className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                                >
-                                    Send inquiry
-                                </button>
-                            </div>
+                                    <button
+                                        type="submit"
+                                        className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                    >
+                                        Send inquiry
+                                    </button>
+                                </div>
                             </form>
                             {/* End Grid */}
                             {/* Checkbox */}
@@ -461,7 +456,7 @@ const AddPolicy = () => {
                                 </div> */}
                             </div>
                             {/* End Checkbox */}
-                           
+
                             <div className="mt-3 text-center">
                                 <p className="text-sm text-gray-500">
                                     We'll get back to you in 1-2 business days.
