@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 const AdminNavbar = () => {
   return (
@@ -10,13 +11,13 @@ const AdminNavbar = () => {
           aria-label="Global"
         >
           <div className="flex items-center justify-between">
-            <a
+            <Link
               className="flex-none text-xl font-semibold text-white"
-              href="#"
+              href="/"
               aria-label="Brand"
             >
               Brand
-            </a>
+            </Link>
             <div className="sm:hidden">
               <button
                 type="button"

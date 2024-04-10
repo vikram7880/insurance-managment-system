@@ -38,6 +38,34 @@ const AddPolicy = () => {
         }
     })
 
+    const uploadFile = (e, formField) => {
+
+        const file = e.target.files[0];
+        console.log(file);
+
+        const fd = new FormData();
+        fd.append('myfile', file);
+
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/util/uploadfile`, {
+            method: 'POST',
+            body: fd
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    toast.success('File Uploaded');
+                    response.json()
+                        .then((data) => {
+                            policyForm.values[formField] = data.savedFile;
+                        })
+                } else {
+                    toast.error('Some Error Occured');
+                }
+            }).catch((err) => {
+                console.log(err);
+                toast.error('Some Error Occured');
+            });
+    }
+
     return (
         <>
             {/* Hire Us */}
@@ -369,7 +397,7 @@ const AddPolicy = () => {
                                             </label>
                                             <input
                                                 type="file"
-
+                                                onChange={(e) => uploadFile(e, 'cover')}
                                                 className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
@@ -382,7 +410,8 @@ const AddPolicy = () => {
                                             </label>
                                             <input
                                                 type="file"
-                                            className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                                                onChange={(e) => uploadFile(e, 'image')}
+                                                className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             />
                                         </div>
                                     </div>
@@ -425,7 +454,7 @@ const AddPolicy = () => {
                                         type="submit"
                                         className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                                     >
-                                        Send inquiry
+                                        Add Insurance Policy
                                     </button>
                                 </div>
                             </form>
@@ -454,13 +483,6 @@ const AddPolicy = () => {
                                         </a>
                                     </label>
                                 </div> */}
-                            </div>
-                            {/* End Checkbox */}
-
-                            <div className="mt-3 text-center">
-                                <p className="text-sm text-gray-500">
-                                    We'll get back to you in 1-2 business days.
-                                </p>
                             </div>
                         </div>
                         {/* End Card */}
