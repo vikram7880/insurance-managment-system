@@ -11,12 +11,12 @@ const Navbar = () => {
       className="flex items-center space-x-3 rtl:space-x-reverse"
     >
       <img
-        src="https://flowbite.com/docs/images/logo.svg"
+        src="https://png.pngtree.com/template/20190308/ourmid/pngtree-life-insurance-logo-image_62955.jpg"
         className="h-8"
-        alt="Flowbite Logo"
+        alt="Isurance Logo"
       />
       <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-        Flowbite
+        INSURANCE
       </span>
     </a>
     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

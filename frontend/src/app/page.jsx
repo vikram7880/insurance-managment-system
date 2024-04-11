@@ -18,7 +18,7 @@ const Home = () => {
               New
             </span>{" "}
             <span className="text-sm font-medium">
-              Flowbite is out! See what's new
+                  about insurance management system
             </span>
             <svg
               className="ml-2 w-5 h-5"
@@ -34,11 +34,11 @@ const Home = () => {
             </svg>
           </a>
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            We invest in the world’s potential
+           Protect The Meaningful Things in Life
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-            Here at Flowbite we focus on markets where technology, innovation, and
-            capital can unlock long-term value and drive economic growth.
+            We are ready to protect you and your loved ones with our
+            full-range of insurance packages. Free consulation.
           </p>
           <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a
