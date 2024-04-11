@@ -193,7 +193,7 @@ const Home = () => {
                 <div className="col-span-4">
                   <img
                     className="rounded-xl"
-                    src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80"
+                    src="https://img.freepik.com/free-photo/close-up-doctor-with-stethoscope_23-2149191355.jpg?w=740&t=st=1712819435~exp=1712820035~hmac=08107e3cdda29f3fd27496f3872212e3c77a0336b933cc033debec101662e600"
                     alt="Image Description"
                   />
                 </div>
@@ -201,7 +201,7 @@ const Home = () => {
                 <div className="col-span-3">
                   <img
                     className="rounded-xl"
-                    src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+                    src="https://media.istockphoto.com/id/1399863063/photo/concepts-of-business-planning-high-performance-business-processes-and-workflows-problem.jpg?s=1024x1024&w=is&k=20&c=l6lynem347we1JG6rmJqRzyuPCpvaXP1cAL25_laggU="
                     alt="Image Description"
                   />
                 </div>
@@ -209,7 +209,7 @@ const Home = () => {
                 <div className="col-span-5">
                   <img
                     className="rounded-xl"
-                    src="https://images.unsplash.com/photo-1600194992440-50b26e0a0309?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+                    src="https://www.investopedia.com/thmb/sm7ux5ZyNnrRwYE2omH21vH2AZI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/insurance-policies-everyone-should-have.asp-final-cf42cc8f61ae46a7acffc9b519457815.png"
                     alt="Image Description"
                   />
                 </div>
