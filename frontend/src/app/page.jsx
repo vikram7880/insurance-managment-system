@@ -190,7 +190,7 @@ const Home = () => {
             <div className="lg:col-span-7">
               {/* Grid */}
               <div className="grid grid-cols-12 gap-2 sm:gap-6 items-center lg:-translate-x-10">
-                <div className="col-span-4">
+                <div className="col-span-5">
                   <img
                     className="rounded-xl"
                     src="https://img.freepik.com/free-photo/close-up-doctor-with-stethoscope_23-2149191355.jpg?w=740&t=st=1712819435~exp=1712820035~hmac=08107e3cdda29f3fd27496f3872212e3c77a0336b933cc033debec101662e600"
@@ -198,10 +198,18 @@ const Home = () => {
                   />
                 </div>
                 {/* End Col */}
-                <div className="col-span-3">
+                <div className="col-span-5">
                   <img
                     className="rounded-xl"
                     src="https://media.istockphoto.com/id/1399863063/photo/concepts-of-business-planning-high-performance-business-processes-and-workflows-problem.jpg?s=1024x1024&w=is&k=20&c=l6lynem347we1JG6rmJqRzyuPCpvaXP1cAL25_laggU="
+                    alt="Image Description"
+                  />
+                </div>
+                 {/* End Col */}
+                 <div className="col-span-5">
+                  <img
+                    className="rounded-xl"
+                    src="https://www.avivaindia.com/sites/default/files/Riders%20for%20Insurance%20benefits.jpg"
                     alt="Image Description"
                   />
                 </div>
@@ -214,6 +222,7 @@ const Home = () => {
                   />
                 </div>
                 {/* End Col */}
+                
               </div>
               {/* End Grid */}
             </div>
