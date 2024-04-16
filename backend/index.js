@@ -9,6 +9,7 @@ const port = 5000;
 const postRouter = require('./routers/userRouter');
 const insuranceRouter = require('./routers/insuranceRouter');
 const contactRouter = require('./routers/contactRouter');
+const reviewRouter = require('./routers/reviewRouter');
 const utilRouter = require('./routers/utils');
 
 // middleware
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use('/user', postRouter);
 app.use('/insurance', insuranceRouter);
 app.use('/contact', contactRouter);
+app.use('/review', reviewRouter);
 app.use('/util', utilRouter);
 app.use(express.static('./static/uploads'));
 

@@ -7,6 +7,15 @@ const Browse = () => {
     const [policyData, setPolicyData] = useState([]);
     const [masterList, setMasterList] = useState([]);
 
+    const applysearch = (e) => {
+        const inputText = e.target.value;
+
+        setPolicyData(masterList.filter((equipment) => {
+            return equipment.title.toLowerCase().includes(inputText.toLowerCase());
+        }));
+
+    }
+
     const fetchPolicyData = async () => {
         fetch(`${process.env.NEXT_PUBLIC_API_URL}/insurance/getall`)
             .then((response) => {
@@ -92,6 +101,7 @@ const Browse = () => {
                                         Search
                                     </label>
                                     <input
+                                     onChange={applysearch}
                                         type="text"
                                         id="hero-input"
                                         name="hero-input"
@@ -99,12 +109,7 @@ const Browse = () => {
                                         placeholder="Enter your email"
                                     />
                                 </div>
-                                <a
-                                    className="w-full sm:w-auto whitespace-nowrap py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                                    href="#"
-                                >
-                                    Subscribe
-                                </a>
+                               
                             </div>
                         </form>
                     </div>
