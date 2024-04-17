@@ -39,6 +39,10 @@ const Home = () => {
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
             We are ready to protect you and your loved ones with our
             full-range of insurance packages. Free consulation.
+            This Online Insurance makes a great starting point for your futur and persent. The facilities provider
+            by the online insurance system wii supervise and secure future of the policy holder. It not only secure
+            the life but also provides the loans facility. It is one of opportunities to secure your family
+            and children's futur. 
           </p>
           <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a
