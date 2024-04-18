@@ -16,7 +16,7 @@ const AdminNavbar = () => {
               href="/"
               aria-label="Brand"
             >
-              Brand
+              Insurance
             </Link>
             <div className="sm:hidden">
               <button
