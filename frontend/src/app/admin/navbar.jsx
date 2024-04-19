@@ -65,32 +65,27 @@ const AdminNavbar = () => {
             className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
           >
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
-              <a
+              <Link
                 className="font-medium text-white sm:py-6"
-                href="#"
+                href="/admin/add-policy"
                 aria-current="page"
               >
-                Landing
-              </a>
-              <a
+                Add Policy
+              </Link>
+              <Link
                 className="font-medium text-white/[.8] hover:text-white sm:py-6"
-                href="#"
+                href="/admin/manageuser"
               >
-                Account
-              </a>
-              <a
+                Manage User
+              </Link>
+              <Link
                 className="font-medium text-white/[.8] hover:text-white sm:py-6"
-                href="#"
+                href="/admin/managepolicy"
               >
-                Work
-              </a>
-              <a
-                className="font-medium text-white/[.8] hover:text-white sm:py-6"
-                href="#"
-              >
-                Blog
-              </a>
-              <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
+                Manage Policy
+              </Link>
+            
+              {/* <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
                 <button
                   type="button"
                   className="flex items-center w-full text-white/[.8] hover:text-white font-medium"
@@ -173,7 +168,7 @@ const AdminNavbar = () => {
                     Team Account
                   </a>
                 </div>
-              </div>
+              </div> */}
               <a
                 className="flex items-center gap-x-2 font-medium text-white/[.8] hover:text-white sm:border-s sm:border-white/[.3] sm:my-6 sm:ps-6"
                 href="#"
